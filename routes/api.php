@@ -16,9 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::resource('photos', 'PhotoController', ['only' => ['index', 'store']]);
+//Route::resource('photos', 'PhotoController', ['only' => ['index', 'store']]);
 Route::post('authenticate', 'AuthenticateController@authenticate');
-/*Route::group(['middleware' => ['jwt.auth']], function () {
-    Route::resource('photo', 'PhotoController');
-});*/
+Route::post('register', 'AuthenticateController@register');
+Route::group(['middleware' => ['jwt.auth']], function () {
+    Route::resource('photos', 'PhotoController');
+});
 
