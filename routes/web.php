@@ -12,9 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('admin/photo', 'Admin\\PhotoController');
+Route::resource('permissions', 'PermissionController');
+Route::resource('roles', 'RoleController');
+Route::resource('users', 'UserController');
+
+Route::get('image-upload','ImageController@imageUpload');
+Route::post('image-upload','ImageController@imageUploadPost');
+

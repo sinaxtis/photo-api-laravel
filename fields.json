@@ -1,0 +1,45 @@
+{
+  "fields": [
+    {
+      "name": "latitud",
+      "type": "string"
+    },
+    {
+      "name": "longitud",
+      "type": "string"
+    },
+    {
+      "name": "photo",
+      "type": "text"
+    },
+    {
+      "name": "user_id",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "user_id",
+      "references": "id",
+      "on": "users",
+      "onDelete": "cascade"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "user",
+      "type": "belongsTo",
+      "class": "App\\User"
+    }
+  ],
+  "validations": [
+    {
+      "field": "latitud",
+      "rules": "required|max:50"
+    },
+    {
+      "field": "longitud",
+      "rules": "required|max:50"
+    }
+  ]
+}

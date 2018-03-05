@@ -14,10 +14,10 @@ class Photo extends Model
     protected $table = 'photos';
 
     /**
-     * The database primary key value.
-     *
-     * @var string
-     */
+    * The database primary key value.
+    *
+    * @var string
+    */
     protected $primaryKey = 'id';
 
     /**
@@ -25,11 +25,11 @@ class Photo extends Model
      *
      * @var array
      */
-    protected $fillable = ['latitud', 'longitud', 'picture', 'user_id'];
+    protected $fillable = ['latitud', 'longitud', 'photo', 'user_id'];
 
     public function user()
     {
         return $this->belongsTo('App\User');
     }
-
+    
 }
