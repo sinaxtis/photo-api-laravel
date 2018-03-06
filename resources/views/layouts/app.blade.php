@@ -79,7 +79,7 @@
                 </div>
             </div>
         </nav>
-                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <nav class="col-md-2 d-none d-md-block sidebar">
                 @if(auth()->user())
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
@@ -110,7 +110,7 @@
                             </li>
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href={{ url('/admin/photo') }}>
+                                    <a class="nav-link" href={{ url('/photo') }}>
                                         <span data-feather="home"></span>
                                         Fotos <span class="sr-only">(current)</span>
                                     </a>

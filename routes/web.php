@@ -17,13 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::resource('admin/photo', 'Admin\\PhotoController');
-Route::resource('permissions', 'PermissionController');
-Route::resource('roles', 'RoleController');
-Route::resource('users', 'UserController');
+Route::resource('permissions', 'Admin\\PermissionController');
+Route::resource('roles', 'Admin\\RoleController');
+Route::resource('users', 'Admin\\UserController');
+Route::get('image-upload','Admin\\ImageController@imageUpload');
+Route::post('image-upload','Admin\\ImageController@imageUploadPost');
 
-Route::get('image-upload','ImageController@imageUpload');
-Route::post('image-upload','ImageController@imageUploadPost');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('photo', 'User\\PhotoUserController');
 

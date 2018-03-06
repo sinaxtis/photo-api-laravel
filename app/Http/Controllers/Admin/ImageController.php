@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Image;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'isAdmin']);
+    }
+
     /**
      * Create view file
      *
